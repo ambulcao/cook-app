@@ -14,10 +14,17 @@ export const styles = StyleSheet.create({
   },
 
   image: {
-
+    width: 18,
+    height: 18,
   },
 
   title: {
-
+    fontSize: theme.fonts.size.body.sm,
+    fontFamily: theme.fonts.family.medium,
   },
+  selected: {
+    borderWidth: 2,
+    borderColor: theme.colors.green_600,
+    backgroundColor: theme.colors.green_100
+  }
 })
