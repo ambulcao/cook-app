@@ -1,6 +1,6 @@
 import { ScrollView } from "react-native"
 
-import { services } from "@/src/components/services"
+import { services } from "@/src/services"
 
 import { styles } from "./styles"
 import { Ingredient, IngredientsProps } from "@/src/components/Ingredient"
