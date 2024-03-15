@@ -18,22 +18,19 @@ export default function Recipes() {
   const params = useLocalSearchParams<{ ingredientsIds: string }>()
   const ingredientsIds = params.ingredientsIds.split(",")
 
-
-
-  useEffect(() => {
-    services.ingredients
-      .findByIds(ingredientsIds)
-      .then(setIngredients)
-  }, [])
-
-
   useEffect(() => {
     services.recipes
       .findByIngredientsIds(ingredientsIds)
-      .then(setRecipes)
+      .then((response) => setRecipes(response))
+      .finally(() => setIsLoading(false))
   }, [])
 
-
+  useEffect(() => {
+    services.ingredientes
+      .findByIds(ingredientsIds)
+      .then((response) => setIngredients(response))
+      .finally(() => setIsLoading(false))
+  }, [])
 
   if (isLoading) {
     return <Loading />

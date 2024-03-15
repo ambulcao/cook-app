@@ -1,10 +1,8 @@
-import { theme } from "@/src/theme";
-import { StyleSheet } from "react-native";
+import { StyleSheet } from "react-native"
+import { theme } from "@/src/theme"
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
+  container: { flex: 1 },
   header: {
     paddingHorizontal: 32,
     paddingTop: 62,
@@ -21,5 +19,9 @@ export const styles = StyleSheet.create({
   recipesContent: {
     gap: 16,
   },
-  empty: {},
+  empty: {
+    fontSize: theme.fonts.size.body.md,
+    fontFamily: theme.fonts.family.regular,
+    color: theme.colors.gray_400,
+  },
 })

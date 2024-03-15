@@ -26,7 +26,7 @@ export default function Recipes() {
   }, [])
 
   useEffect(() => {
-    services.ingredients
+    services.ingredientes
       .findByRecipeId(id)
       .then((response) => setIngredients(response))
   }, [])

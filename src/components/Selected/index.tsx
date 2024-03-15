@@ -1,10 +1,11 @@
+import { View, Text } from "react-native"
+import MaterialIcons from "@expo/vector-icons/MaterialIcons"
+import Animated, { BounceOutDown, SlideInDown } from "react-native-reanimated"
 
-import { Text, View } from "react-native"
-import Animated, { SlideInDown, BounceOutDown } from "react-native-reanimated"
-import { MaterialIcons } from "@expo/vector-icons"
-import { styles } from "../Selected/styles"
 import { theme } from "@/src/theme"
-import { Button } from "../Button"
+import { styles } from "./styles"
+
+import { Button } from "@/src/components/Button"
 
 type Props = {
   quantity: number
@@ -13,18 +14,24 @@ type Props = {
 }
 
 export function Selected({ quantity, onClear, onSearch }: Props) {
-  return(
-    <Animated.View 
-      style={styles.container} 
-      entering={SlideInDown.duration(500)} 
-      exiting={BounceOutDown.duration(500)}
+  return (
+    <Animated.View
+      entering={SlideInDown.duration(500)}
+      exiting={BounceOutDown}
+      style={styles.container}
     >
       <View style={styles.header}>
         <Text style={styles.label}>{quantity} ingredientes selecionados</Text>
-        <MaterialIcons name="close" size={24} onPress={onClear} color={theme.colors.gray_400}/>
+
+        <MaterialIcons
+          name="close"
+          size={24}
+          color={theme.colors.gray_400}
+          onPress={onClear}
+        />
       </View>
 
-      <Button title="Encontrar"  onPress={onSearch} />
+      <Button title="Encontrar" onPress={onSearch} />
     </Animated.View>
   )
 }

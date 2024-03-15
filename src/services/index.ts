@@ -1,10 +1,10 @@
 import * as recipes from "./recipesService"
-import * as ingredients from "./ingredientsService"
+import * as ingredientes from "./ingredientsService"
 import * as preparations from "./preparationsService"
 
 export const services = {
   recipes,
-  ingredients,
+  ingredientes,
   preparations,
 
   storage: {
